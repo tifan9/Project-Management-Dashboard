@@ -3,7 +3,7 @@ import { Plus, Calendar } from 'lucide-react';
 import type { Filters, Task } from '../types';
 import { FilterBar } from '../components/FilterBar';
 import { TaskCard } from '../components/cards/TaskCard ';
-import { useTaskContext } from '../hooks/useTaskContext';
+import { useTask } from '../hooks/useTask';
 
 interface TasksPageProps {
   onEditTask: (task: Task) => void;
@@ -11,7 +11,7 @@ interface TasksPageProps {
 }
 
 export const TasksPage: React.FC<TasksPageProps> = ({ onEditTask, onAddTask }) => {
-  const { state } = useTaskContext();
+  const { state } = useTask();
   const [filters, setFilters] = useState<Filters>({
     status: 'All',
     priority: 'All',
@@ -54,7 +54,7 @@ export const TasksPage: React.FC<TasksPageProps> = ({ onEditTask, onAddTask }) =
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <div>
+        <div className="py-8">
           <h1 className="text-3xl font-bold text-gray-900">Tasks</h1>
           <p className="text-gray-600 mt-1">Manage all your team tasks</p>
         </div>

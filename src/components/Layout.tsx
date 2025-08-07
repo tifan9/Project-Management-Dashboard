@@ -4,8 +4,9 @@ import { DashboardPage } from '../pages/DashboardPage';
 import { TasksPage } from '../pages/TasksPage';
 import { AnalyticsPage } from '../pages/AnalyticsPage';
 import { SettingsPage } from '../pages/SettingsPage';
-import { Sidebar } from './SideBar';
+// import { Sidebar } from './SideBar';
 import { TaskForm } from './TaskForm';
+import { Sidebar } from './Sidebar';
 
 export const Layout: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('dashboard');

@@ -1,5 +1,5 @@
 
-import { useTaskContext } from "../hooks/useTaskContext";
+import { useTask } from "../hooks/useTask";
 import type { Filters } from "../types";
 
 interface FilterBarProps {
@@ -8,7 +8,7 @@ interface FilterBarProps {
 }
 
 export const FilterBar: React.FC<FilterBarProps> = ({ filters, setFilters }) => {
-  const { state } = useTaskContext();
+  const { state } = useTask();
   
   const uniqueCategories = Array.from(new Set(state.tasks.map(task => task.category)));
   const uniqueUsers = Array.from(new Set(state.tasks.map(task => task.assignedUser)));

@@ -1,7 +1,7 @@
 import type { Task } from "../../types";
 import React from 'react';
 import { AlertCircle, Calendar, Check, Edit2, Tag, Trash2, User } from 'lucide-react';
-import { useTaskContext } from "../../hooks/useTaskContext";
+import { useTask } from "../../hooks/useTask";
 interface TaskCardProps {
   task: Task;
   onEdit: (task: Task) => void;
@@ -9,7 +9,7 @@ interface TaskCardProps {
 }
 
 export const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit, variant = 'default' }) => {
-  const { dispatch } = useTaskContext();
+  const { dispatch } = useTask();
 
   const handleToggleComplete = () => {
     dispatch({ type: 'TOGGLE_COMPLETE', payload: task.id });

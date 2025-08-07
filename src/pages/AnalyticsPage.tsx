@@ -1,9 +1,9 @@
 import React from 'react';
 import { BarChart3, Tag, User, List } from 'lucide-react';
 import { StatCard } from '../components/cards/StatCard';
-import { useTaskContext } from '../hooks/useTaskContext';
+import { useTask } from '../hooks/useTask';
 export const AnalyticsPage: React.FC = () => {
-  const { state } = useTaskContext();
+  const { state } = useTask();
   
   const categoryStats = state.tasks.reduce((acc, task) => {
     acc[task.category] = (acc[task.category] || 0) + 1;

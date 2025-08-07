@@ -11,8 +11,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage })
   const menuItems = [
     { id: 'dashboard' as Page, label: 'Dashboard', icon: Home },
     { id: 'tasks' as Page, label: 'Tasks', icon: List },
-    { id: 'analytics' as Page, label: 'Analytics', icon: BarChart3 },
-    { id: 'settings' as Page, label: 'Settings', icon: Settings },
+    // { id: 'analytics' as Page, label: 'Analytics', icon: BarChart3 },
+    // { id: 'settings' as Page, label: 'Settings', icon: Settings },
   ];
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -20,14 +20,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage })
   return (
     <>
       {/* Hamburger menu for mobile */}
-      <button
-        className="md:hidden fixed top-2 left-2 z-50 bg-gray-900 text-white p-2 rounded-lg shadow-lg"
+    <button
+        className="md:hidden fixed top-4 left-4 z-50 bg-primarycolor-900 text-white p-2 rounded-lg shadow-lg"
         onClick={() => setSidebarOpen(true)}
         aria-label="Open sidebar"
       >
         <Menu className="w-6 h-6" />
       </button>
-
       {/* Overlay for mobile sidebar */}
       {sidebarOpen && (
         <div
@@ -38,7 +37,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage })
 
       {/* Sidebar */}
       <div
-        className={`bg-gray-900 text-white w-64 min-h-screen p-4 fixed top-0 left-0 z-50 transform transition-transform duration-300
+        className={`bg-primarycolor-900 text-white w-64 min-h-screen p-4 fixed top-0 left-0 z-50 transform transition-transform duration-300
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
           md:static md:translate-x-0 md:block`}
         style={{ height: '100vh' }}
@@ -69,8 +68,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage })
                 }}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                   currentPage === item.id
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                    ? 'bg-primarycolor-700 text-white'
+                    : 'text-gray-300 hover:bg-primarycolor-800 hover:text-white'
                 }`}
               >
                 <Icon className="w-5 h-5" />

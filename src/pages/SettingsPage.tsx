@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Plus, X } from 'lucide-react';
-import { useTaskContext } from '../hooks/useTaskContext';
+import { useTask } from '../hooks/useTask';
 export const SettingsPage: React.FC = () => {
-  const { state } = useTaskContext();
+  const { state } = useTask();
   
   const [teamMembers, setTeamMembers] = useState<string[]>(
     Array.from(new Set(state.tasks.map(task => task.assignedUser)))

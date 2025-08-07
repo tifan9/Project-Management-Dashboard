@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from 'react';
+import React, { createContext, useReducer } from 'react';
 import { TaskState, TaskAction } from '../types';
 
 export const TaskContext = createContext<{
@@ -40,7 +40,7 @@ export const TaskProvider: React.FC<{ children: React.ReactNode }> = ({ children
         priority: 'High',
         category: 'Backend',
         dueDate: '2025-08-10',
-        assignedUser: 'Alice Johnson',
+        assignedUser: 'Uwase Sophie',
         assignedOn: '2025-08-01',
         completed: false
       },

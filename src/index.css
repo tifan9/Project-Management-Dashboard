@@ -1,1 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import "tailwindcss";
+
+
+@theme{
+
+
+    --breakpoint-xs: 480px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+
+    /* font family */
+    --font-family-primary: 'Montserrat', sans-serif;
+  /* Primary Colors: Light Mode */
+  --color-primarycolor-50: oklch(0.9517 0.0199 267.29);
+  --color-primarycolor-100: oklch(0.8535 0.0627 265.04);
+  --color-primarycolor-200: oklch(0.7819 0.0956 265.75);
+  --color-primarycolor-300: oklch(0.6842 0.1436 264.73);
+  --color-primarycolor-400: oklch(0.6271 0.1722 263.91);
+  --color-primarycolor-500: oklch(0.5461 0.2152 262.88);
+  --color-primarycolor-600: oklch(0.5104 0.1997 262.97);
+  --color-primarycolor-700: oklch(0.4278 0.1638 262.97);
+  --color-primarycolor-800: oklch(0.3587 0.1329 263.04);
+  --color-primarycolor-900: oklch(0.3035 0.1061 263.11);
+
+  /* Primary Colors: Dark Mode */
+  --color-primarycolor-50: oklch(91.5% 0.018 235);
+  --color-primarycolor-100: oklch(85.0% 0.050 235);
+  --color-primarycolor-200: oklch(78.0% 0.078 235);
+  --color-primarycolor-300: oklch(70.0% 0.110 235);
+  --color-primarycolor-400: oklch(62.0% 0.140 235);
+  --color-primarycolor-500: oklch(52.0% 0.170 235);
+  --color-primarycolor-600: oklch(0.5104 0.1997 262.97);
+  --color-primarycolor-700: oklch(35.0% 0.140 235);
+  --color-primarycolor-800: oklch(28.0% 0.110 235);
+  --color-primarycolor-900: oklch(21.0% 0.090 235);
+}
+
+/* Set Montserrat as the default font */
+body {
+    font-family: var(--font-family-primary);
+}

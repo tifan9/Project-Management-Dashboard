@@ -3,7 +3,8 @@ import { List, Check, Calendar, AlertCircle } from 'lucide-react';
 import type { Task } from '../types';
 import { StatCard } from '../components/cards/StatCard';
 import { TaskCard } from '../components/cards/TaskCard ';
-import { useTaskContext } from '../hooks/useTaskContext';
+import { useTask } from '../hooks/useTask';
+import { Header } from '../components/Header';
 
 
 interface DashboardPageProps {
@@ -11,7 +12,7 @@ interface DashboardPageProps {
 }
 
 export const DashboardPage: React.FC<DashboardPageProps> = ({ onEditTask }) => {
-  const { state } = useTaskContext();
+  const { state } = useTask();
   
   const completedCount = state.tasks.filter(task => task.completed).length;
   const overdueCount = state.tasks.filter(task => 
@@ -29,10 +30,8 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onEditTask }) => {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-        <p className="text-gray-600 mt-1">Overview of your team's progress</p>
-      </div>
+      {/* header section */}
+      <Header />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard
@@ -61,7 +60,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onEditTask }) => {
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white p-6 rounded-lg border border-gray-200">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Tasks</h3>
           <div className="space-y-3">
@@ -87,7 +86,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onEditTask }) => {
             )}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,14 +1,14 @@
 import { useState } from "react";
 import type { Task } from "../types";
 import { X } from "lucide-react";
-import { useTaskContext } from "../hooks/useTaskContext";
+import { useTask } from "../hooks/useTask";
 
 interface TaskFormProps {
   editingTask?: Task;
   onClose: () => void;
 }
 export const TaskForm: React.FC<TaskFormProps> = ({ editingTask, onClose }) => {
-  const { dispatch } = useTaskContext();
+  const { dispatch } = useTask();
   const [formData, setFormData] = useState<Omit<Task, 'id' | 'completed'>>({
     taskName: editingTask?.taskName || '',
     priority: editingTask?.priority || 'Medium',
