@@ -1,13 +1,13 @@
+import React from 'react';
+import { TaskProvider } from './context/TaskContext';
+import { Layout } from './components/Layout';
 
-function App() {
-
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <h1 className="text-3xl font-bold text-center p-5">typescript</h1>
-      </div>
-    </>
-  )
-}
+    <TaskProvider>
+      <Layout />
+    </TaskProvider>
+  );
+};
 
-export default App
+export default App;
